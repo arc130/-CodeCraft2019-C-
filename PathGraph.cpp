@@ -261,20 +261,20 @@ std::shared_ptr<cross>& PathGraph::vertexData(int i)
  }
 
  //为车规划路径
- void PathGraph::planningPath(std::shared_ptr<car>& mycar)
- {
-	 Dijkstra(mycar->_from, mycar->_to);
-	 int a = mycar->_to;
-	 int b;
-	 do {
-
-		 b = parent(a);
-		 Edge* pEdge = getEdge(b, a);
-		 mycar->car_new_plan_path.push_back(pEdge);
-		 a = b;
-	 } while (parent(a) != -1);
-	 std::reverse(mycar->car_new_plan_path.begin(), mycar->car_new_plan_path.end());
- }
+// void PathGraph::planningPath(std::shared_ptr<car>& mycar)
+// {
+//	 Dijkstra(mycar->_from, mycar->_to);
+//	 int a = mycar->_to;
+//	 int b;
+//	 do {
+//
+//		 b = parent(a);
+//		 Edge* pEdge = getEdge(b, a);
+//		 mycar->car_new_plan_path.push_back(pEdge);
+//		 a = b;
+//	 } while (parent(a) != -1);
+//	 std::reverse(mycar->car_new_plan_path.begin(), mycar->car_new_plan_path.end());
+// }
 
  //处理每个道路上的车
  void PathGraph::driveAllCarJustOnRoadToEndState(Edge* edge)
