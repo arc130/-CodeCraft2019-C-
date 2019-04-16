@@ -30,45 +30,45 @@ public:
 	{
 
 	}
-	//»ñµÃÆû³µĞĞÊ»Â·Ïß×î´óÈ¨ÖØ±ß
+	//è·å¾—æ±½è½¦è¡Œé©¶è·¯çº¿æœ€å¤§æƒé‡è¾¹
 	Edge* getPlanPathMaxWeightEdge();
 
-		//µ±Ç°µÀÂ·µÄ×î´óËÙ¶È
+		//å½“å‰é“è·¯çš„æœ€å¤§é€Ÿåº¦
 	int getCurrentRoadSpeed(void);
 	//void recoverOldPath();
-	//ÏÂ¸öµÀÂ·µÄ×î´óĞĞÊ»ËÙ¶È
+	//ä¸‹ä¸ªé“è·¯çš„æœ€å¤§è¡Œé©¶é€Ÿåº¦
 	int getNextRoadSpeed(void);
 	Edge* getCurrentEdge();
 	Edge* getNextEdge();
-	//ÊÇ·ñÊÇ×îºóµÄµÀÂ·
+	//æ˜¯å¦æ˜¯æœ€åçš„é“è·¯
 	bool isFinal();
 	void recover();
 	void save();
 	CarStatus carStatus;
-	int _car_id;//Æû³µId
-	int _end_time;//Æû³µ½áÊøÊ±¼ä
-	int _from;//´ÓÄÄ¸öÂ·¿Ú³ö·¢
-	int _to;//µ½ÄÄ¸öÂ·¿ÚÍ£Ö¹
-	int _speed;//Æû³µĞĞÊ»×î´óËÙ¶È
-	int _plantime;//×îĞ¡³ö·¢Ê±¼ä
-	int _priority;//ÊÇ·ñÓÅÏÈ
-	int _preset;//ÊÇ·ñÎªÔ¤ÖÃ³µÁ¾
+	int _car_id;//æ±½è½¦Id
+	int _end_time;//æ±½è½¦ç»“æŸæ—¶é—´
+	int _from;//ä»å“ªä¸ªè·¯å£å‡ºå‘
+	int _to;//åˆ°å“ªä¸ªè·¯å£åœæ­¢
+	int _speed;//æ±½è½¦è¡Œé©¶æœ€å¤§é€Ÿåº¦
+	int _plantime;//æœ€å°å‡ºå‘æ—¶é—´
+	int _priority;//æ˜¯å¦ä¼˜å…ˆ
+	int _preset;//æ˜¯å¦ä¸ºé¢„ç½®è½¦è¾†
 
-	int _start_time;//Êµ¼Ê³ö·¢Ê±¼ä
-	int _channel;//ËùÔÚ³µµÀ
-	int undrive_distance;//³µÁ¾ÔÚµ±Ç°µÀÂ·»¹Î´ĞĞÊ»µÄ¾àÀë
+	int _start_time;//å®é™…å‡ºå‘æ—¶é—´
+	int _channel;//æ‰€åœ¨è½¦é“
+	int undrive_distance;//è½¦è¾†åœ¨å½“å‰é“è·¯è¿˜æœªè¡Œé©¶çš„è·ç¦»
 
-	int lock_count;//ËÀËøÊ± Ã¿´ÎµÈ´ı+1
+	int lock_count;//æ­»é”æ—¶ æ¯æ¬¡ç­‰å¾…+1
 	CarIsInEdgeGarage isInGarage;
-	bool allowRePlanPath;//Èç¹û³µ×Óµ±Ç°Ê±¼äÆ¬Î´ÄÜ³É¹¦¹ıÂ·¿ÚÇÒ³ÉÎªÖÕÖ¹×´Ì¬ºó Ôò²»ÔÊĞíÖØĞÂ¹æ»®µÀÂ·
-	std::vector< Edge* > car_lock_road;//´æ·Åµ¼ÖÂËÀËøµÄµÀÂ·
+	bool allowRePlanPath;//å¦‚æœè½¦å­å½“å‰æ—¶é—´ç‰‡æœªèƒ½æˆåŠŸè¿‡è·¯å£ä¸”æˆä¸ºç»ˆæ­¢çŠ¶æ€å åˆ™ä¸å…è®¸é‡æ–°è§„åˆ’é“è·¯
+	std::vector< Edge* > car_lock_road;//å­˜æ”¾å¯¼è‡´æ­»é”çš„é“è·¯
 
 
 
 
-	std::vector< Edge* > car_new_plan_path;//´æ·Å³µÁ¾ĞÂµÄ¹æ»®Â·¾¶
-	//std::vector< Edge* > car_old_plan_path;//´æ·ÅÖØĞÂ¹æ»®Ö®Ç°µÄÂ·¾¶
-	std::vector<Edge*> car_pass_path;//´æ·Å³µÁ¾ÒÑ¾­ĞĞÊ»µÄÂ·¾¶
+	std::vector< Edge* > car_new_plan_path;//å­˜æ”¾è½¦è¾†æ–°çš„è§„åˆ’è·¯å¾„
+	//std::vector< Edge* > car_old_plan_path;//å­˜æ”¾é‡æ–°è§„åˆ’ä¹‹å‰çš„è·¯å¾„
+	std::vector<Edge*> car_pass_path;//å­˜æ”¾è½¦è¾†å·²ç»è¡Œé©¶çš„è·¯å¾„
 	int current_edge_index;
 	//int old_edge_index;
 
@@ -77,7 +77,7 @@ public:
 	int last_channel;
 	int last_undrive_distance;
 	std::vector< Edge* >  last_car_new_plan_path;
-	std::vector<Edge*> last_car_pass_path;//´æ·Å³µÁ¾ÒÑ¾­ĞĞÊ»µÄÂ·¾¶
+	std::vector<Edge*> last_car_pass_path;//å­˜æ”¾è½¦è¾†å·²ç»è¡Œé©¶çš„è·¯å¾„
 	int  last_current_edge_index;
 	CarStatus last_carStatus;
 	int last_start_time;
@@ -92,13 +92,13 @@ public:
 		
 	}
 
-	int _road_id;//µÀÂ·IdºÅ
-	int _length;//µÀÂ·³¤¶È
-	int _speed;//µÀÂ·ÔÊĞíµÄ×î´óËÙ¶È
-	int _channel;//µÀÂ·µÄ³µµÀÊı
-	int _from;//Á¬½ÓµÄÂ·¿Ú
-	int _to;//Á¬½ÓµÄÂ·¿Ú
-	int _isDuplex;//ÊÇ·ñË«Ïò
+	int _road_id;//é“è·¯Idå·
+	int _length;//é“è·¯é•¿åº¦
+	int _speed;//é“è·¯å…è®¸çš„æœ€å¤§é€Ÿåº¦
+	int _channel;//é“è·¯çš„è½¦é“æ•°
+	int _from;//è¿æ¥çš„è·¯å£
+	int _to;//è¿æ¥çš„è·¯å£
+	int _isDuplex;//æ˜¯å¦åŒå‘
 
 };
 
@@ -109,21 +109,21 @@ class cross
 	cross(int cross_id,int right_road_id,int buttom_road_id,int left_road_id,int top_road_id)
 		:_cross_id(cross_id), _right_road_id(right_road_id), _buttom_road_id(buttom_road_id), _left_road_id(left_road_id), _top_road_id(top_road_id)
 	{}
-	int _cross_id;//Â·¿ÚId
-	int _right_road_id;//ÓÒµÀÂ·Id
-	int _buttom_road_id;//ÏÂµÀÂ·Id
-	int _left_road_id;//×óµÀÂ·Id
-	int _top_road_id;//ÉÏµÀÂ·Id
+	int _cross_id;//è·¯å£Id
+	int _right_road_id;//å³é“è·¯Id
+	int _buttom_road_id;//ä¸‹é“è·¯Id
+	int _left_road_id;//å·¦é“è·¯Id
+	int _top_road_id;//ä¸Šé“è·¯Id
 	//std::list<car> notDriveCars;
 }; 
 
-//±ß½á¹¹
+//è¾¹ç»“æ„
 struct Edge
 {
-	//×¢ÒâÕâÀïºÍroadµÄ²»Ò»Ñù
-	int from;//±ßµÄÆğµã
-	int to;//±ßµÄÖÕµãµã
-	std::shared_ptr<road> data;//Ã¿ÌõÂ·ÖĞµÄÊı¾İ
+	//æ³¨æ„è¿™é‡Œå’Œroadçš„ä¸ä¸€æ ·
+	int from;//è¾¹çš„èµ·ç‚¹
+	int to;//è¾¹çš„ç»ˆç‚¹ç‚¹
+	std::shared_ptr<road> data;//æ¯æ¡è·¯ä¸­çš„æ•°æ®
 
 	//std::set<CarDirection> car_direction_set;
 	void updateSelfWeight()
@@ -158,16 +158,16 @@ struct Edge
 	{
 		std::vector< std::shared_ptr<car>> vec_cars = std::vector< std::shared_ptr<car>>(ready_cars.begin(), ready_cars.end());
 
-		//³µÁ¾ID
+		//è½¦è¾†ID
 		std::stable_sort(vec_cars.begin(), vec_cars.end(),
 			[](const std::shared_ptr<car>  &a, const std::shared_ptr<car>  &b)
 		{return a->_car_id < b->_car_id; });
 
-	    //·¢³µÊ±¼ä
+	    //å‘è½¦æ—¶é—´
 		std::stable_sort(vec_cars.begin(), vec_cars.end(),
 			[](const std::shared_ptr<car>  &a, const std::shared_ptr<car>  &b)
 		{return a->_start_time < b->_start_time; });
-		//ÓÅÏÈ¼¶
+		//ä¼˜å…ˆçº§
 		std::stable_sort(vec_cars.begin(), vec_cars.end(),
 			[](const std::shared_ptr<car>  &a, const std::shared_ptr<car>  &b)
 		{return a->_priority > b->_priority; });
@@ -198,10 +198,10 @@ struct Edge
 
 
 
-	double weight;//±ßµÄÈ¨ÖØ
+	double weight;//è¾¹çš„æƒé‡
 	std::vector<std::list<std::shared_ptr<car>>> carsInPerRoads;
 
-	double last_weight;//ÉÏ¸öÊ±¼äÆ¬ ±ßµÄÈ¨ÖØ
+	double last_weight;//ä¸Šä¸ªæ—¶é—´ç‰‡ è¾¹çš„æƒé‡
 	std::vector<std::list<std::shared_ptr<car>>> last_carsInPerRoads;
 
 	std::list<std::shared_ptr<car>> garage_cars;
@@ -218,22 +218,22 @@ struct Edge
 
 
 
-//¶¥µã½á¹¹
+//é¡¶ç‚¹ç»“æ„
 struct Vertex
 {
-	std::shared_ptr<cross> data;//Ã¿¸öÂ·¿ÚÖĞµÄÊı¾İ
+	std::shared_ptr<cross> data;//æ¯ä¸ªè·¯å£ä¸­çš„æ•°æ®
 	VStatus status;
-	int parent;//±éÀúÊ÷ÖĞµÄ¸¸½Úµã£¬ÔÚ×î¶ÌÂ·¾¶ÖĞ¿ÉÓÃµ½
-	//int priority;//Õâ¸ö¿ÉÒÔ´ú±íÃ¿¸öÂ·¿ÚµÄÓµ¼·³Ì¶È£¬ÓÅ»¯µÄÊ±ºò¿ÉÒÔÊ¹ÓÃ
-	double distance;//DËã·¨µÄ¾àÀë
-	//Edge* pFirstEdgeOut;//´Ó¶¥µãÏòÍâµÄµÚÒ»Ìõ±ß
-	//Edge* pFirstEdgeIn;//´Ó¶¥µãÏòÍâµÄµÚÒ»Ìõ±ß
+	int parent;//éå†æ ‘ä¸­çš„çˆ¶èŠ‚ç‚¹ï¼Œåœ¨æœ€çŸ­è·¯å¾„ä¸­å¯ç”¨åˆ°
+	//int priority;//è¿™ä¸ªå¯ä»¥ä»£è¡¨æ¯ä¸ªè·¯å£çš„æ‹¥æŒ¤ç¨‹åº¦ï¼Œä¼˜åŒ–çš„æ—¶å€™å¯ä»¥ä½¿ç”¨
+	double distance;//Dç®—æ³•çš„è·ç¦»
+	//Edge* pFirstEdgeOut;//ä»é¡¶ç‚¹å‘å¤–çš„ç¬¬ä¸€æ¡è¾¹
+	//Edge* pFirstEdgeIn;//ä»é¡¶ç‚¹å‘å¤–çš„ç¬¬ä¸€æ¡è¾¹
 
 //	std::vector<std::shared_ptr<Edge>> edgeInVec;
 //	std::vector<std::shared_ptr<Edge>> edgeOutVec;
 	std::vector<Edge*> edgeInVec;
 	std::vector<Edge*> edgeOutVec;
-	//int road_count;//Á¬½ÓµÀÂ·µÄ¸öÊı
+	//int road_count;//è¿æ¥é“è·¯çš„ä¸ªæ•°
 	Vertex() {}
 	Vertex(const std::shared_ptr<cross>& d) :data(d), parent(-1), status(UNDISCOVERED)//, pFirstEdgeOut(NULL), pFirstEdgeIn(NULL)
 	{
@@ -245,103 +245,103 @@ struct Vertex
 class PathGraph
 {
 public:
-	PathGraph();//¹¹Ôì
-	~PathGraph();//Îö¹¹
+	PathGraph();//æ„é€ 
+	~PathGraph();//ææ„
 
-	void reset();//ËùÓĞ¶¥µã¡¢±ßµÄ¸¨ÖúĞÅÏ¢¸´Î»
-	std::shared_ptr<cross>& vertexData(int);//»ñµÃ¶¥µãÊı¾İ
+	void reset();//æ‰€æœ‰é¡¶ç‚¹ã€è¾¹çš„è¾…åŠ©ä¿¡æ¯å¤ä½
+	std::shared_ptr<cross>& vertexData(int);//è·å¾—é¡¶ç‚¹æ•°æ®
 
-	int firstNbr(int);//Ê×¸öÁÚ½Ó¶¥µã 
+	int firstNbr(int);//é¦–ä¸ªé‚»æ¥é¡¶ç‚¹ 
 
-	int nextNbr(int, int);//Ïà¶ÔÓÚÒ»ÁÚ½Ó¶¥µãµÄÏÂÒ»¶¥µã
-	VStatus& status(int);//»ñµÃ¶¥µã×´Ì¬
-	int& parent(int);//ÔÚ±éÀúÊ÷ÖĞµÄ¸¸½Úµã
-	double& distance(int);//ÔÚ±éÀúÊ÷ÖĞµÄ¾àÀë
-	void insert(const std::shared_ptr<cross>&);//²åÈë¶¥µã	
-	void remove(const std::shared_ptr<cross>&);//É¾³ı¶¥µã
+	int nextNbr(int, int);//ç›¸å¯¹äºä¸€é‚»æ¥é¡¶ç‚¹çš„ä¸‹ä¸€é¡¶ç‚¹
+	VStatus& status(int);//è·å¾—é¡¶ç‚¹çŠ¶æ€
+	int& parent(int);//åœ¨éå†æ ‘ä¸­çš„çˆ¶èŠ‚ç‚¹
+	double& distance(int);//åœ¨éå†æ ‘ä¸­çš„è·ç¦»
+	void insert(const std::shared_ptr<cross>&);//æ’å…¥é¡¶ç‚¹	
+	void remove(const std::shared_ptr<cross>&);//åˆ é™¤é¡¶ç‚¹
 
-	bool exists(int, int);//±ß£¨i£¬j£©ÊÇ·ñ´æÔÚ
+	bool exists(int, int);//è¾¹ï¼ˆiï¼Œjï¼‰æ˜¯å¦å­˜åœ¨
 
-	std::shared_ptr<road>& edgeData(int, int);//»ñµÃ±ß(i,j)µÄÊı¾İ
-	Edge* getEdge(int, int);//»ñµÃ±ß(i,j)
-	Edge* getStraightEdge(std::shared_ptr<car>&); //»ñÈ¡Ö±ĞĞµÄedge
-	Edge* getEdgeByRoadIdAndFromCrossId(int roadId,int from_crossId);//ÓÃµÀÂ·IdºÍfromµÄÂ·¿Ú»ñÈ¡±ß
-	double weight(int, int);//±ß(i,j£©µÄÈ¨ÖØ
+	std::shared_ptr<road>& edgeData(int, int);//è·å¾—è¾¹(i,j)çš„æ•°æ®
+	Edge* getEdge(int, int);//è·å¾—è¾¹(i,j)
+	Edge* getStraightEdge(std::shared_ptr<car>&); //è·å–ç›´è¡Œçš„edge
+	Edge* getEdgeByRoadIdAndFromCrossId(int roadId,int from_crossId);//ç”¨é“è·¯Idå’Œfromçš„è·¯å£è·å–è¾¹
+	double weight(int, int);//è¾¹(i,jï¼‰çš„æƒé‡
 
-	void insert(const std::shared_ptr<road>&, int, int, int);//²åÈëÒ»Ìõ±ß(i,j)
+	void insert(const std::shared_ptr<road>&, int, int, int);//æ’å…¥ä¸€æ¡è¾¹(i,j)
 
-	void remove(int, int);//É¾³ıÒ»Ìõ±ß(i,j)
-	void driveAllCarJustOnRoadToEndState(Edge* edge);//´¦ÀíÃ¿¸öµÀÂ·ÉÏµÄ³µ
+	void remove(int, int);//åˆ é™¤ä¸€æ¡è¾¹(i,j)
+	void driveAllCarJustOnRoadToEndState(Edge* edge);//å¤„ç†æ¯ä¸ªé“è·¯ä¸Šçš„è½¦
 
-	void driveAllCarJustOnLaneToEndState(Edge* edge,int);//´¦ÀíÃ¿¸öµÀÂ·ÉÏµÄ³µ
+	void driveAllCarJustOnLaneToEndState(Edge* edge,int);//å¤„ç†æ¯ä¸ªé“è·¯ä¸Šçš„è½¦
 
-	void driveCarInGarage(Edge* edge,int,bool);//½«³µ¿âÖĞµÄ³µÉÏÂ·
+	void driveCarInGarage(Edge* edge,int,bool);//å°†è½¦åº“ä¸­çš„è½¦ä¸Šè·¯
 
 	void init(std::vector<std::shared_ptr<road>>&, std::vector<std::shared_ptr<cross>>&, std::ifstream& ,std::vector<std::shared_ptr<car>>&);
-	void start(std::vector<std::shared_ptr<car>>&);//ÈÃÆû³µ¿ªÊ¼ÅÜ
-	//´Ó¶¥µãiµ½jµÄ×î¶ÌÂ·¾¶
-	void Dijkstra(int i, int j)
-	{
-		reset();
-		std::priority_queue<P, std::vector<P>, std::greater<P>> Q;
-		Q.push(P(0.0, i));
-		v_map.at(i).distance = 0;
-		while (!Q.empty())
-		{
-			int u = Q.top().second;
-			Q.pop();
+	void start(std::vector<std::shared_ptr<car>>&);//è®©æ±½è½¦å¼€å§‹è·‘
+	//ä»é¡¶ç‚¹iåˆ°jçš„æœ€çŸ­è·¯å¾„
+	//void Dijkstra(int i, int j)
+	//{
+	//	reset();
+	//	std::priority_queue<P, std::vector<P>, std::greater<P>> Q;
+	//	Q.push(P(0.0, i));
+	//	v_map.at(i).distance = 0;
+	//	while (!Q.empty())
+	//	{
+	//		int u = Q.top().second;
+	//		Q.pop();
+//
+	//		for (auto iter = v_map.at(u).edgeOutVec.begin(); iter != v_map.at(u).edgeOutVec.end(); ++iter)
+	//		{
+	//			int v = (*iter)->to;
+	//			int _weight = 0;
+	//			if (distance(v) > distance(u) + weight(u, v))
+	//			{
+	//				distance(v) = distance(u) + weight(u, v);
+	//				//printf("%d\n", weight(u, v));
+	//				parent(v) = u;
+	//				Q.push(P(distance(v), v));
+	//			}
+//
+	//		}
+	//	}
+	//}
+	void planningPath(std::shared_ptr<car>& mycar);//ä¸ºè½¦è§„åˆ’è·¯å¾„ 
 
-			for (auto iter = v_map.at(u).edgeOutVec.begin(); iter != v_map.at(u).edgeOutVec.end(); ++iter)
-			{
-				int v = (*iter)->to;
-				int _weight = 0;
-				if (distance(v) > distance(u) + weight(u, v))
-				{
-					distance(v) = distance(u) + weight(u, v);
-					//printf("%d\n", weight(u, v));
-					parent(v) = u;
-					Q.push(P(distance(v), v));
-				}
-
-			}
-		}
-	}
-	void planningPath(std::shared_ptr<car>& mycar);//Îª³µ¹æ»®Â·¾¶ 
-
-	 //ÖØĞÂ¹æ»®Â·¾¶
+	 //é‡æ–°è§„åˆ’è·¯å¾„
 	void rePlanningPath(std::shared_ptr<car>& mycar);
 
 
 	//void planningPathTest(std::shared_ptr<car>& mycar);
 
-	bool existWaitCars(std::vector<std::shared_ptr<car>>&);//ÊÇ·ñ´æÔÚµÈ´ıÆû³µ
-	CarDirection getDirection(std::shared_ptr<car>);//»ñµÃÆû³µÏÂ¸öĞĞÊ»×ªÍä·½Ïò
-	void moveToNextRoad(std::shared_ptr<car>&,int);//È¥ÏÂÒ»¸ö½ÖµÀ
+	bool existWaitCars(std::vector<std::shared_ptr<car>>&);//æ˜¯å¦å­˜åœ¨ç­‰å¾…æ±½è½¦
+	CarDirection getDirection(std::shared_ptr<car>);//è·å¾—æ±½è½¦ä¸‹ä¸ªè¡Œé©¶è½¬å¼¯æ–¹å‘
+	void moveToNextRoad(std::shared_ptr<car>&,int);//å»ä¸‹ä¸€ä¸ªè¡—é“
 
 	std::shared_ptr<car> getCarFromRoad(Edge*);
 
-	//³µ¿âÖĞµÄÆÕÍ¨³µÁ¾ÉÏÂ·ĞĞÊ»
+	//è½¦åº“ä¸­çš„æ™®é€šè½¦è¾†ä¸Šè·¯è¡Œé©¶
 	//void driveNormalCarInGarage(std::vector<std::shared_ptr<car>>&,int time);
 
 	void planningPathAndPutCarInGarage(std::vector<std::shared_ptr<car>>&,int);
-	double getAverWeight();//»ñÈ¡µÀÂ·µÄÆ½¾ùÈ¨ÖØ
+	double getAverWeight();//è·å–é“è·¯çš„å¹³å‡æƒé‡
 
-	// ËùÓĞµÄ³µ¶¼ÊÇFinish×´Ì¬ ËµÃ÷µ÷¶ÈÍê³É
+	// æ‰€æœ‰çš„è½¦éƒ½æ˜¯FinishçŠ¶æ€ è¯´æ˜è°ƒåº¦å®Œæˆ
 	bool allCarFinish(std::vector<std::shared_ptr<car>>&);
 
-	 bool isConflict(std::shared_ptr<car>);//ÊÇ·ñ·¢Éú³åÍ»
+	 bool isConflict(std::shared_ptr<car>);//æ˜¯å¦å‘ç”Ÿå†²çª
 	 void readAnswer(std::ifstream& in, std::vector<std::shared_ptr<car>>& car_list);
 	 void saveAll(std::vector<std::shared_ptr<car>>&);
-	 void recoverAll(std::vector<std::shared_ptr<car>>&); //ÖØĞÂ¹æ»®ºó »Ö¸´ËùÓĞµÄÂ·¿öĞÅÏ¢
+	 void recoverAll(std::vector<std::shared_ptr<car>>&); //é‡æ–°è§„åˆ’å æ¢å¤æ‰€æœ‰çš„è·¯å†µä¿¡æ¯
 	 void updateWeight();
 private:
-	//std::map<Vertex<T>,std::list<Edge<K> *>> V//¶¥µã¼¯ºÏ
-	//std::vector<std::vector<Edge<K>* >> E;//±ß¼¯ºÏ
-	//std::vector<Vertex> V;//ÓÉ¶¥µãÖ¸ÏòÍâ
-	std::map<int, Vertex> v_map;//¶¥µãµÄÓ³Éä
-	typedef std::pair<int, int> P; //firstÊÇ×î¶Ì¾àÀë£¬secondÊÇ¶¥µãµÄ±àºÅ
-	//std::vector<Vertex> VIN;//Ö¸Ïò¶¥µã
-	int n, e;//¶¥µã¸öÊı,±ß×ÜÊı
+	//std::map<Vertex<T>,std::list<Edge<K> *>> V//é¡¶ç‚¹é›†åˆ
+	//std::vector<std::vector<Edge<K>* >> E;//è¾¹é›†åˆ
+	//std::vector<Vertex> V;//ç”±é¡¶ç‚¹æŒ‡å‘å¤–
+	std::map<int, Vertex> v_map;//é¡¶ç‚¹çš„æ˜ å°„
+	typedef std::pair<int, int> P; //firstæ˜¯æœ€çŸ­è·ç¦»ï¼Œsecondæ˜¯é¡¶ç‚¹çš„ç¼–å·
+	//std::vector<Vertex> VIN;//æŒ‡å‘é¡¶ç‚¹
+	int n, e;//é¡¶ç‚¹ä¸ªæ•°,è¾¹æ€»æ•°
 };
 
 void calculateTime(std::vector<std::shared_ptr<car>>&,int );
