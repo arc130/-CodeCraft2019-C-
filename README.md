@@ -1,4 +1,3 @@
-<style id="custom" type="text/css"></style></head>
 <body marginheight="0"><h2>华为CodeCraft2019软挑 判题器 C++版</h2>
 <ul>
 <li><h2>成渝赛区 进击的小菜鸟</h2>
