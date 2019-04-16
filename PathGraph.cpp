@@ -1373,6 +1373,12 @@ TEST:	 while (existWaitCars(car_list))
 			 auto iter = std::find_if(car_list.begin(), car_list.end(),
 				 [preset_carId](const std::shared_ptr<car>  &a)
 			 {return a->_car_id == preset_carId; });
+			 
+			 if (!(*iter)->car_new_plan_path.empty())
+			 {
+				 continue;
+			 }//复赛现场添加的部分 读取修改了路径的预置车辆
+			 
 			 (*iter)->_start_time = preset_start_time;
 			 int cross_from = (*iter)->_from;
 
